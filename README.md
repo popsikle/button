@@ -17,50 +17,53 @@ API Endpoints and Methods
 POST (Create user)
 
 params:
-    + email
-    + firstName
-    + lastName
+- email
+- firstName
+- lastName
 
 returns:
-    user data on success (200)
-    errors on param failure (400)
-    jedi mind tricks on app failure (500)
+- user data on success (200)
+- errors on param failure (400)
+- jedi mind tricks on app failure (500)
 
 /user/points
 --------------------
 GET (get points)
+
 params:
-    + email
+- email
 
 returns:
-    user current point value on success (200)
-    errors on param failure (400)
-    jedi mind tricks on app failure (500)
+- user current point value on success (200)
+- errors on param failure (400)
+- jedi mind tricks on app failure (500)
 
 
 /transfer/record
 --------------------
 POST (Record a transfer)
+
 params:
-    + email
-    + points
+- email
+- points
 
 returns:
-    user current point value on success (200)
-    errors on param failure (400)
-    jedi mind tricks on app failure (500)
+- user current point value on success (200)
+- errors on param failure (400)
+- jedi mind tricks on app failure (500)
 
 
 /transfer/list
 --------------------
 GET (list all transfers)
+
 params:
-    + email
+- email
 
 returns:
-    user list object of transfers on success (200)
-    errors on param failure (400)
-    jedi mind tricks on app failure (500)
+- user list object of transfers on success (200)
+- errors on param failure (400)
+- jedi mind tricks on app failure (500)
 
 
 Running Local Tests
