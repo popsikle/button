@@ -2,15 +2,15 @@ var config = require('./config.js').getConfig(process.env.NODE_ENV);
 
 if (config.test_mode === false) {
   var redis = require('redis')
+  var rdb = redis.createClient(config.redis.port, config.redis.host);
+  if (config.redis.auth) {
+    rdb.auth(config.redis.auth);
+  }
+  console.log("Redis Connected "+ config.redis.host + ":" + config.redis.port);
 } else {
   console.log("Running in TEST MODE")
   var redis = require('mock-redis-client').createMockRedis();
-}
-
-var rdb = redis.createClient(config.redis.port, config.redis.host)
-
-if (config.redis.auth) {
-  rdb.auth(config.redis.auth);
+  var rdb = redis.createClient();
 }
 
 /**
