@@ -55,7 +55,7 @@ exports.getConfig = function(env) {
     case 'heroku':
       var rtg = require("url").parse(process.env.REDIS_URL);
       config = _.extend(config, {
-        port: 80,
+        port: 5000,
         test_mode: false,
         redis: {
           host: rtg.hostname,
