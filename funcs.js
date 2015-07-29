@@ -25,16 +25,11 @@ exports.getUser = function(email, cb) {
   });
 };
 
-exports.addUser = function(email, data, cb) {
+exports.addUser = function(email, user, cb) {
   key = 'user:' + email;
-  user = {
-    firstName: data.firstName,
-    lastName: data.lastName
-  }
-  key = 'user:' + email
-  rdb.hgetall(key, function(err, user) {
+  rdb.hgetall(key, function(err, userFound) {
     if (err) cb(err, null)
-    if (user) cb('User Exists', null)
+    if (userFound) cb('User Exists', null)
     rdb.hmset(key, user, function(err, reply) {
       if (err) cb(err, null)
       cb(null, user);
