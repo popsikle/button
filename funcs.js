@@ -84,7 +84,7 @@ exports.returnResults = function(res, data) {
     "errors" : [],
     "ok" : true,
     "results" : data,
-    "status" : 0
+    "status" : 200
   };
   res.set('Content-Type', 'application/json');
   res.status(200).send(ret_data)
