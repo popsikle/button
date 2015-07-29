@@ -86,6 +86,7 @@ exports.returnResults = function(res, data) {
     "results" : data,
     "status" : 0
   };
+  res.set('Content-Type', 'application/json');
   res.status(200).send(ret_data)
   res.end();
 };
@@ -93,6 +94,7 @@ exports.returnResults = function(res, data) {
 exports.param_error = function(res, error) {
   console.log("Returning Error");
   if (res.headersSent === false) {
+    res.set('Content-Type', 'application/json');
     var ret_data = {
       "errors" : [
         error
@@ -110,6 +112,7 @@ exports.param_error = function(res, error) {
 exports.param_missing = function(res, errors) {
   console.log("Returning Error");
   if (res.headersSent === false) {
+    res.set('Content-Type', 'application/json');
     var ret_data = {
       "errors" : errors,
       "ok" : false,
