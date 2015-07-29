@@ -1,7 +1,7 @@
 {
   "name": "button",
-  "description" : "A node JS interface for crawling URLS",
-  "version": "0.0.1",
+  "description" : "A nodeJS Demo APP ",
+  "version": "0.0.2",
   "private": true,
   "dependencies": {
     "express": "4.8.0",
@@ -9,12 +9,17 @@
     "querystring" : "0.2.0",
     "underscore": "1.6.0",
     "redis": "0.12.1",
+    "url" : "0.10.3",
     "express-validator": "2.13.0",
     "mock-redis-client": "0.90.21",
     "mocha" : "2.2.5",
     "chai" : "3.2.0"
   },
   "scripts": {
+    "start": "node app.js",
     "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "engines": {
+    "node" : "0.10.33"
   }
 }

@@ -9,6 +9,9 @@ if (config.test_mode === false) {
 
 var rdb = redis.createClient(config.redis.port, config.redis.host)
 
+if (config.redis.auth) {
+  rdb.auth(config.redis.auth);
+}
 
 /**
  * data Functions
